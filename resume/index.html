@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Chuxiong Pei</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../projects/index.html">Projects</a>
+    <a href="index.html">Resume</a>
+    <a href="../contact/index.html">Contact</a>
+    <a href="https://github.com/chewythechoochoo" target="_blank">GitHub</a>
+  </nav>
+
+  <header>
+    <h1>Chuxiong Pei</h1>
+    <p>
+      <a href="mailto:chupei770@gmail.com">chupei770@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/chu-pei" target="_blank">LinkedIn</a> ·
+      <a href="https://github.com/chewythechoochoo" target="_blank">github.com/chewythechoochoo</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>Education</h2>
+
+    <article>
+      <header>
+        <h3>University of California, San Diego</h3>
+        <p>
+          <em>Bachelor of Science in Data Science</em> · San Diego, CA ·
+          <time datetime="2025">2025</time> – <time datetime="2027">2027</time>
+        </p>
+      </header>
+      <ul>
+        <li><strong>Relevant Coursework:</strong> Theoretical Foundations of Data Science</li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>San Jose State University</h3>
+        <p>
+          <em>Bachelor of Science in Aerospace Engineering (Minor in Computer Science)</em> · San Jose, CA ·
+          <time datetime="2022">2022</time> – <time datetime="2025">2025</time>
+        </p>
+      </header>
+      <ul>
+        <li><strong>Relevant Coursework:</strong> Data Structures and Algorithms (C++), Probability &amp; Statistics in CS (Python), Advanced Python, SQL</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <article>
+      <header>
+        <h3>Cognixion</h3>
+        <p>
+          <em>Data Engineering Intern</em> · Remote ·
+          <time datetime="2022-05">May 2022</time> – <time datetime="2022-08">Aug 2022</time>
+        </p>
+      </header>
+      <ul>
+        <li>Collaborated in a small team to develop a real-time facial recognition system using Python and OpenCV, enabling tracking of user movements.</li>
+        <li>Gained hands-on experience with computer vision algorithms, enhancing technical and problem-solving skills.</li>
+        <li>Navigated project complexities, collaborating effectively to ensure smooth integration and system functionality.</li>
+        <li>Contributed to expanding the Cognixion database for AR glasses, focusing on content for users with communication disabilities.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <article>
+      <header>
+        <h3>Momentum: Theme Rotation Trading Agent</h3>
+        <p><em>Python, Alpaca API, GitHub Actions, JavaScript, SVG</em></p>
+      </header>
+      <ul>
+        <li>
+          Built a paper-trading agent on the Alpaca API with a <strong>15-minute GitHub Actions cron</strong> over
+          <strong>10 themes / 50+ tickers</strong>; designed <strong>40/30/20/10 momentum-sentiment-volume-policy scoring</strong>
+          with a 0–30 point volatility penalty and risk caps of <strong>20% per theme</strong>, <strong>7% per ticker</strong>,
+          2 new buys per cycle, 5–8% trailing stops, and a <strong>15% drawdown halt</strong>; architected
+          <strong>17 type-hinted Python modules</strong> with live-money-endpoint guards, a 3-source news fallback chain,
+          and a <strong>word-bag classifier mapping headlines to 17 event types</strong> (M&amp;A, earnings beat/miss, FDA,
+          contract win); covered by <strong>14 pytest tests</strong>.
+        </li>
+        <li>
+          Shipped a read-only static dashboard (<strong>vanilla JS, hand-rolled SVG, no framework</strong>) on
+          <strong>GitHub Pages</strong>: <strong>hover-crosshair equity chart</strong>, scrolling news marquee from
+          <strong>5 free RSS feeds</strong>, pulsing live equity indicator, separate themes page, responsive viewBox for
+          mobile, and <strong>90-second JSON auto-refresh polling</strong>.
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>RoomieOS: Shared-Home Workspace (<a href="https://roomieos.app" target="_blank">roomieos.app</a>)</h3>
+        <p><em>Next.js, React, TypeScript, Tailwind CSS, SwiftUI, Resend, Vercel</em></p>
+      </header>
+      <ul>
+        <li>
+          Designed and built <strong>RoomieOS</strong>, a cozy iOS-first product for roommates to manage chores, expenses,
+          conversations, and house rules, shipping both a <strong>marketing website</strong> and a
+          <strong>native SwiftUI iOS app prototype</strong>.
+        </li>
+        <li>
+          Engineered the marketing site with <strong>Next.js 16</strong>, <strong>React 19</strong>, <strong>TypeScript</strong>,
+          and <strong>Tailwind CSS v4</strong>, including a hand-drawn <strong>scrapbook design system</strong> with sticker
+          buttons, paper cards, scribble underlines, and a <strong>day/night theme toggle</strong>.
+        </li>
+        <li>
+          Integrated a <strong>waitlist signup flow</strong> via a <strong>Next.js API route</strong> that validates emails,
+          blocks spam with a <strong>honeypot field</strong>, and pushes new contacts to a
+          <strong>Resend Audiences mailing list</strong> with graceful error handling.
+        </li>
+        <li>
+          Built the iOS companion in <strong>SwiftUI (2,600+ lines)</strong> featuring a <strong>six-step onboarding</strong>
+          with spring transitions and sparkle confetti, <strong>swipeable inbox/expenses tabs</strong>, an
+          <strong>inline composer with slash-style suggestions</strong>, and a <strong>scrub-friendly expense-trend graph</strong>.
+        </li>
+        <li>
+          Architected a <strong>theme system with four user-selectable colorways</strong> (Classic Cream, Sunset Peach,
+          Garden Mint, Twilight Lavender), each pairing complementary <strong>day + night palettes</strong>, persisted via
+          <code>@AppStorage</code> and applied through <strong>UIColor’s dynamic provider</strong>; preserved a unified
+          cross-platform identity via the <strong>Gaegu typeface</strong> and shared paper palette.
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, C++, Java, JavaScript, TypeScript</li>
+      <li><strong>Technologies:</strong> React.js, Angular, Vue.js, Django, Flask, Spring Boot, Express.js, TensorFlow, PyTorch, Bootstrap, Laravel, Node.js</li>
+      <li><strong>Concepts:</strong> Compilers, Virtual Memory, Cache Memory, Encryption, Decryption, Artificial Intelligence, Machine Learning, Neural Networks, APIs, Database Normalization, Agile Methodology, Cloud Computing</li>
+    </ul>
+  </section>
+</body>
+</html>
