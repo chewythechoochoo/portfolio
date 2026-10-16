@@ -1,4 +1,5 @@
 html {
+  color-scheme: light dark;
   --color-accent: oklch(65% 50% 0);
   accent-color: var(--color-accent);
 }
@@ -13,17 +14,15 @@ body {
 }
 
 img {
-  /* Keep images from overflowing on small screens */
   max-width: 100%;
   height: auto;
 }
 
-/* Navigation */
-
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 1em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -35,7 +34,7 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.1em;
 }
 
@@ -44,14 +43,14 @@ nav a:hover {
   padding-bottom: 0.1em;
 }
 
-/* Headings */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -60,11 +59,7 @@ h1 {
   font-size: 400%;
 }
 
-/* Contact form */
-
-input,
-textarea,
-button {
+input, textarea, button, select {
   font: inherit;
 }
 
@@ -84,8 +79,6 @@ form {
   }
 }
 
-/* Projects */
-
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -102,14 +95,12 @@ form {
   }
 }
 
-/* CV / resume */
-
 section {
   margin-block: 2em;
 
   h2 {
     color: var(--color-accent);
-    border-bottom: 1px solid oklch(80% 3% 200);
+    border-bottom: 1px solid oklch(50% 10% 200 / 40%);
     padding-bottom: 0.25em;
   }
 
@@ -117,15 +108,13 @@ section {
     margin-block: 1.5em;
   }
 
-  article header {
-    h3 {
-      margin-bottom: 0.25em;
-    }
+  h3 {
+    margin-bottom: 0.25em;
+  }
 
-    p {
-      margin-top: 0;
-      color: oklch(45% 3% 200);
-    }
+  header p {
+    margin-top: 0;
+    opacity: 0.75;
   }
 
   li {
