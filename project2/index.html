@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Project 2 Report</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > img {
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <p>
+                <strong>Alexander Phan</strong> — <em>ahp009@ucsd.edu</em><br />
+                <strong>Chu Pei</strong> — <em>c2pei@ucsd.edu</em><br />
+                <strong>Kevin Pyo</strong> — <em>kpyo@ucsd.edu</em><br />
+                <strong>Sungsan Rhie</strong> — <em>srhie@ucsd.edu</em>
+            </p>
+        </header>
+
+        <main>
+            <h2>Proposition: Climate-related disasters are becoming more frequent.</h2>
+
+            <p>
+                Our data is the Climate-related Disasters Frequency dataset from the
+                <a href="https://climatedata.imf.org/">IMF Climate Change Indicators Dashboard</a>
+                (the original source is EM-DAT). For each country, it has how many
+                climate-related disasters there were each year from 1980 to 2024 (floods,
+                storms, droughts, wildfires, landslides, and extreme temperatures) and how
+                many people were affected. The file doesn't have a world total, so we added
+                up all the countries for each year. We only used 2000 to 2024 for both charts
+                because
+                <a href="https://doc.emdat.be/docs/known-issues-and-limitations/specific-biases/">EM-DAT's documentation</a>
+                says the older records are less complete and recommends not using pre-2000
+                data for trends.
+            </p>
+
+            <p>
+                We scored each design decision from −2 to 2, where −2 is fully deceptive, 0 is
+                neutral, and 2 is fully earnest (we used half points sometimes). We decided
+                not to use any deceptive techniques in the final, so all of our scores ended
+                up positive.
+            </p>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img
+                        src="for-recent-record.png"
+                        width="1870"
+                        height="1144"
+                        alt="Bar chart titled '2020–2024 had more climate disasters than any five years on record'. Light red bars show climate disasters recorded worldwide each year from 2000 to 2024, with a horizontal line for each 5-year average: 335, 355, 311, 322, and 380 a year. The 2020–24 average of 380 is highlighted in dark red as the highest."
+                    />
+                    <figcaption>
+                        Climate-related disasters recorded worldwide each year, 2000–2024,
+                        with the average for each 5-year period. Data:
+                        <a href="https://climatedata.imf.org/">IMF Climate Change Indicators Dashboard</a>
+                        (EM-DAT).
+                    </figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>
+                        <strong>Starting in 2000 (score: +2).</strong>
+                        EM-DAT says the data before 2000 isn't reliable for trends, so we
+                        didn't use it. Starting at 1980 would have made this side look a lot
+                        stronger since the count roughly triples, but some of that is probably
+                        just better record keeping. We went with what the source recommends
+                        even though it hurt our argument.
+                    </li>
+                    <li>
+                        <strong>Comparing 5-year averages (score: +2).</strong>
+                        The yearly numbers move around a lot (284 in 2018, 398 in 2023), so
+                        comparing single years would make it easy to cherry-pick. We used
+                        5-year averages instead. 2020–24 averaged about 380 a year, which is
+                        higher than any other 5-year period.
+                    </li>
+                    <li>
+                        <strong>Title about the record (score: +1.5).</strong>
+                        The title says 2020–2024 had more climate disasters than any five
+                        years on record. That's true, and it was the best point we had for
+                        this side. We gave it 1.5 instead of 2 because it leaves out that
+                        2010–14 and 2015–19 were actually lower than 2000–04, so it hasn't
+                        gone up steadily. You can still see that in the chart though.
+                    </li>
+                    <li>
+                        <strong>Zero-based axis and every year shown (score: +2).</strong>
+                        The bars start at zero and all 25 years are shown. We also used the
+                        same 0 to 450 scale as the against chart so you can compare the two.
+                    </li>
+                    <li>
+                        <strong>Dark red for the latest average (score: +1).</strong>
+                        We made the 2020–24 average line darker and thicker than the rest, and
+                        used red since this is the more alarming side. The numbers are the
+                        same either way, but it does make people look at that part first, so
+                        we gave it a 1.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img
+                        src="against-no-clear-trend.png"
+                        width="1870"
+                        height="1144"
+                        alt="Line chart titled 'Since 2000, there's no clear trend in climate disasters'. A blue line shows climate disasters recorded worldwide each year from 2000 to 2024, moving between about 284 and 398. A dashed trend line rises very slightly inside a shaded 95% confidence band, and a dotted flat line also fits inside the band. A note says the trend is +0.7 a year but not statistically clear (p = 0.53). Labels mark 396 in 2005 and 398 in 2023."
+                    />
+                    <figcaption>
+                        Climate-related disasters recorded worldwide each year, 2000–2024,
+                        with a linear trend line and its 95% confidence band. The dotted line
+                        is a flat line for comparison. Data:
+                        <a href="https://climatedata.imf.org/">IMF Climate Change Indicators Dashboard</a>
+                        (EM-DAT).
+                    </figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>
+                        <strong>Starting in 2000 (score: +2).</strong>
+                        Same reason as the for chart, EM-DAT recommends not using the older
+                        data for trends. It also happens to help this side, because most of
+                        the big increase in the dataset is before 2000. We would have started
+                        at 2000 anyway since that's what the source says to do.
+                    </li>
+                    <li>
+                        <strong>Showing how uncertain the trend is (score: +2).</strong>
+                        In our checkpoint feedback, we were told our against charts still
+                        showed the trend going up. So for the final we added the 95%
+                        confidence band around the trend line. The trend is +0.7 disasters a
+                        year, but the data fits anything from about −1.5 to +2.9 a year
+                        (p = 0.53), which means we can't really say it's going up. We added a
+                        flat dotted line too, so you can see a flat line fits inside the band.
+                    </li>
+                    <li>
+                        <strong>Labeling 2005 and 2023 (score: +1.5).</strong>
+                        2023 is the highest year with 398, but 2005 had 396, so the record is
+                        barely higher than a year from almost 20 years ago. Both numbers are
+                        real, but we chose which years to label, so we gave it 1.5.
+                    </li>
+                    <li>
+                        <strong>Zero-based axis on the same scale as the for chart (score: +1.5).</strong>
+                        Line charts don't have to start at zero, and starting at zero makes
+                        changes look smaller. We did it to match the for chart so they're easy
+                        to compare, but we know it makes the line look flatter, which helps us.
+                    </li>
+                    <li>
+                        <strong>Title that says "no clear trend" (score: +1.5).</strong>
+                        This is basically our main argument, and the stats back it up. We
+                        didn't say disasters went down, and the chart still shows 2020–24 was
+                        high. It's a 1.5 because the best estimate is still a small increase,
+                        so "no clear trend" leans a little toward our side.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+
+                <p>
+                    For the checkpoint we used some deceptive techniques, like a dual axis
+                    and a title comparing the lowest year to the highest year. For the final
+                    we wanted to see if we could make both sides persuasive without any of
+                    that, and it ended up being harder than we expected. When we looked at
+                    EM-DAT's documentation, it said not to use data before 2000 for trends.
+                    Most of the increase in our checkpoint for chart came from the 1980s and
+                    1990s, so the for side got a lot weaker. Our checkpoint feedback also
+                    said our against charts didn't really argue against the claim because the
+                    trend was still going up, and people affected isn't the same as how often
+                    disasters happen. Our first try at an honest version had the same
+                    problem, since the title said disasters had "risen only slightly." We
+                    ended up changing the against argument to whether there's even a clear
+                    trend since 2000, and based on the stats there isn't.
+                </p>
+
+                <p>
+                    We were surprised that both sides still worked with honest charts. They
+                    use the same years, the same data, and the same y-axis, and both titles
+                    are true. The for chart looks at the 5-year averages, where 2020–24 is the
+                    highest. The against chart looks at the trend, which is small compared to
+                    how much the numbers change from year to year (years are usually about 38
+                    disasters above or below the average, while the trend only adds about 16
+                    over 24 years). Even without tricks, what we chose to show and what we put
+                    in the title still changes how people read it.
+                </p>
+
+                <p>
+                    We think a visualization is ethical if someone who saw all of the data
+                    would still agree with what the chart says. Highlighting something is
+                    fine as long as it's true and you're not hiding anything important.
+                    Things like rigged axes, cherry-picked years, or ignoring warnings from
+                    the data source go too far, and those were the things we took out after
+                    the checkpoint. The line isn't always clear though. Even our honest charts
+                    have choices that help one side, like starting the line chart at zero,
+                    and that's why not every decision got a 2.
+                </p>
+            </section>
+        </main>
+    </body>
+</html>
