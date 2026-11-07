@@ -196,3 +196,69 @@ section {
     fill: var(--color);
   }
 }
+
+.stats {
+  display: grid;
+  grid-auto-columns: 1fr;
+
+  dt {
+    grid-row: 1;
+  }
+
+  dd {
+    grid-row: 2;
+    margin: 0;
+  }
+}
+
+.gridlines {
+  opacity: 0.15;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25em 1em;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+
+  dt {
+    grid-column: 1;
+    opacity: 0.6;
+  }
+
+  dd {
+    grid-column: 2;
+    margin: 0;
+  }
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background-color: canvas;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+}
